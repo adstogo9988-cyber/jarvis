@@ -1,0 +1,103 @@
+# ============================================
+# JARVIS CONFIGURATION FILE
+# ============================================
+
+# AI Brain Settings
+brain:
+  # Model options: llama3.1:8b, mistral:7b, qwen2.5:7b
+  model: "llama3.1:8b"
+  ollama_server: "http://localhost:11434"
+  temperature: 0.7
+  max_tokens: 512
+  system_prompt: |
+    You are Jarvis, a personal AI assistant living on the user's PC.
+    You are helpful, friendly, and professional.
+    When the user asks you to perform PC tasks (file operations, browser automation, etc.),
+    respond ONLY with a JSON object in this format:
+    {"action": "action_name", "params": {"param1": "value1"}}
+    For normal conversation, respond naturally in English/Urdu.
+
+# Voice Settings
+voice:
+  # Wake word to activate Jarvis
+  wake_word: "Hello Jarvis"
+  
+  # Speech-to-text settings
+  stt:
+    engine: "whisper"  # faster-whisper
+    model_size: "base"  # tiny, base, small, medium, large
+    language: "en"
+  
+  # Text-to-speech settings
+  tts:
+    engine: "coqui"  # coqui or pyttsx3
+    language: "en"
+    voice: "female"  # female or male
+    speed: 1.0
+  
+  # Audio device settings
+  microphone_device: null  # null = default microphone
+  speaker_device: null     # null = default speaker
+  sample_rate: 16000
+
+# Vision Settings
+vision:
+  enabled: true
+  vision_model: "llama3.2-vision"  # or llava
+  capture_device: 0  # 0 = default webcam
+  screenshot_quality: 95
+
+# File & Automation Settings
+automation:
+  file_operations: true
+  browser_automation: true
+  messaging_automation: true
+  
+  # Safe delete - ask for confirmation
+  safe_delete: true
+  
+  # Browser settings
+  browser:
+    headless: false  # Show browser window
+    browser_type: "chromium"
+  
+  # Email settings (leave blank to skip)
+  email:
+    enabled: false
+    provider: "gmail"  # gmail, outlook, etc
+    username: ""
+    app_password: ""  # Use app password, not actual password
+
+# Memory & Database
+memory:
+  database_path: "jarvis_memory.db"
+  max_memory_items: 1000
+  auto_save: true
+
+# UI Settings
+ui:
+  theme: "dark"  # dark or light
+  window_width: 1200
+  window_height: 800
+  show_waveform: true
+  show_status: true
+  auto_start_listening: true
+
+# Sub-Agents (Background Tasks)
+agents:
+  max_workers: 4
+  timeout: 300  # seconds
+  enable_logging: true
+
+# Debug & Logging
+debug:
+  enabled: false
+  log_level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_file: "jarvis.log"
+  verbose: false
+
+# System Defaults
+system:
+  language: "en"  # en or ur (Urdu)
+  timezone: "Asia/Karachi"
+  auto_update_check: true

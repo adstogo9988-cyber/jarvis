@@ -1,0 +1,41 @@
+# Core Brain & AI
+ollama==0.1.47
+requests==2.31.0
+
+# Voice I/O
+faster-whisper==0.10.0
+TTS==0.22.0
+pyttsx3==2.90
+sounddevice==0.4.6
+scipy==1.11.0
+numpy==1.24.3
+
+# PC & File Automation
+pandas==2.0.3
+openpyxl==3.1.2
+
+# Browser Automation
+playwright==1.40.0
+
+# Messaging & Email
+pyautogui==0.9.53
+pyperclip==1.8.2
+
+# Vision
+opencv-python==4.8.1.78
+Pillow==10.1.0
+
+# Desktop UI
+PyQt6==6.6.1
+PyQt6-sip==13.6.0
+
+# Database
+
+# Utilities
+pyyaml==6.0.1
+python-dotenv==1.0.0
+colorama==0.4.6
+progress==1.6
+
+# Packaging
+pyinstaller==6.1.0
